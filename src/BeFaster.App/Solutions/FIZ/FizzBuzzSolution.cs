@@ -9,7 +9,7 @@ namespace BeFaster.App.Solutions.FIZ
         {
             bool isFizz = CheckFizzBuzzNumber(number,3);
             bool isBuzz = CheckFizzBuzzNumber(number, 5);
-            bool isDeluxe = CheckDeluxe(number, 10);
+            bool isDeluxe = CheckDeluxe(number, 3) || CheckDeluxe(number,5);
             bool isOdd = !(number % 2 == 0);
 
             StringBuilder retval = new StringBuilder() ;
@@ -38,15 +38,19 @@ namespace BeFaster.App.Solutions.FIZ
             return (number % check == 0 || number.ToString().Contains(check.ToString()));
         }
 
-        private static bool CheckDeluxe(int number,int greaterthan)
+        private static bool CheckDeluxe(int number,int check)
         {
-            int digits = number.ToString().Length;
-            char firstdigit = number.ToString()[0];
-            var samenums = number.ToString().Split(firstdigit).Length - 1 ;
-            return (number > greaterthan && samenums==digits);
+            /*   int digits = number.ToString().Length;
+               char firstdigit = number.ToString()[0];
+               var samenums = number.ToString().Split(firstdigit).Length - 1 ;
+               return (number > greaterthan && samenums==digits);
+               */
+
+            return (number % check == 0 && number.ToString().Contains(check.ToString()));
         }
     }
 }
+
 
 
 
