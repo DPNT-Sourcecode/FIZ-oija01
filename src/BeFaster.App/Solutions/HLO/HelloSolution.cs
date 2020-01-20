@@ -6,10 +6,11 @@ namespace BeFaster.App.Solutions.HLO
     {
         public static string Hello(string friendName)
         {
-            return "Hello, World!";
+            return string.Format("Hello, {0}!",friendName);
         }
     }
 }
+
 
 
 
