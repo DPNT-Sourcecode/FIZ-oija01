@@ -1,4 +1,5 @@
 ﻿using BeFaster.Runner.Exceptions;
+using System.Text;
 
 namespace BeFaster.App.Solutions.FIZ
 {
@@ -9,8 +10,27 @@ namespace BeFaster.App.Solutions.FIZ
             bool isFizz = CheckFizzBuzzNumber(number,3);
             bool isBuzz = CheckFizzBuzzNumber(number, 5);
             bool isDeluxe = CheckDeluxe(number, 10);
-            bool isOdd = number % 2 == 0;
+            bool isOdd = !(number % 2 == 0);
 
+            StringBuilder retval = new StringBuilder() ;
+
+            if (isFizz)
+            { retval.Append("fizz "); }
+
+            if(isBuzz)
+            { retval.Append("buzz "); }
+
+            if(isDeluxe && isOdd)
+            { retval.Append("fake deluxe "); }
+
+            if(isDeluxe)
+            { retval.Append("deluxe "); }
+
+            if (retval.Length==0)
+            { retval.Append(number.ToString()); }
+
+
+            /*
             if (isFizz && isBuzz && isDeluxe)
             { return "fizz buzz deluxe"; }
 
@@ -30,10 +50,10 @@ namespace BeFaster.App.Solutions.FIZ
 
             if (isDeluxe)
             { return "deluxe"; }
+            */
 
 
-
-            return number.ToString();
+            return retval.ToString().TrimEnd();
         }
 
         private static bool CheckFizzBuzzNumber(int number, int check)
@@ -50,4 +70,5 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
