@@ -10,15 +10,16 @@ namespace BeFaster.App.Solutions.FIZ
             bool isBuzz = (number % 5 == 0);
 
             if(isFizz && isBuzz)
-            { return "FizzBuzz"; }
+            { return "fizz buzz"; }
 
             if(isFizz)
-            { return "Fizz"; }
+            { return "fizz"; }
 
             if(isBuzz)
-            { return "Buzz"; }
+            { return "buzz"; }
 
             return number.ToString();
         }
     }
 }
+
