@@ -20,29 +20,30 @@ namespace BeFaster.App.Tests.Solutions.SUM
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public int Sum_GivenFirstValueBelowRange_ThrowException()
         {
-            return SumSolutionTest.Sum(-1, 50);
+            return SumSolution.Sum(-1, 50);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public int Sum_GivenFirstValueAboveRange_ThrowException()
         {
-            return SumSolutionTest.Sum(101, 50);
+            return SumSolution.Sum(101, 50);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public int Sum_GivenSecondValueBelowRange_ThrowException()
         {
-            return SumSolutionTest.Sum(50, -1);
+            return SumSolution.Sum(50, -1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public int Sum_GivenSecondValueAboveRange_ThrowException()
         {
-            return SumSolutionTest.Sum(50, 101);
+            return SumSolution.Sum(50, 101);
         }
 
     }
 }
+
