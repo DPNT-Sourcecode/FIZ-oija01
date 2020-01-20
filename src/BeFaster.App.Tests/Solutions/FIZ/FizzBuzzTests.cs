@@ -18,12 +18,28 @@ namespace BeFaster.App.Tests.Solutions.FIZ
         [TestCase(1501,ExpectedResult ="buzz")]
         [TestCase(1301,ExpectedResult = "fizz")]
         [TestCase(1531,ExpectedResult ="fizz buzz")]
-        [TestCase(1111,ExpectedResult ="fizz buzz deluxe")]
+        [TestCase(1111,ExpectedResult ="deluxe")]
         public string TestFizz (int x)
         {
             return FizzBuzzSolution.FizzBuzz(x);
         }
 
+        [TestCase]
+        public void WriteAllFizzBuzzDeluxeNumber()
+        {
+            int i = 1;
+            while (i < 9999)
+            {
+                string s = FizzBuzzSolution.FizzBuzz(i);
+                if (s=="fizz buzz deluxe")
+                {
+                    System.Diagnostics.Debug.WriteLine(i.ToString());
+                }
+                i++;
+            }
+        }
+
     }
 }
+
 
