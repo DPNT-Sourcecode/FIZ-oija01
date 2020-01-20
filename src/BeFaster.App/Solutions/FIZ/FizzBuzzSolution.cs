@@ -8,15 +8,21 @@ namespace BeFaster.App.Solutions.FIZ
         {
             bool isFizz = CheckFizzBuzzNumber(number,3);
             bool isBuzz = CheckFizzBuzzNumber(number, 5);
+            bool isDeluxe = CheckDeluxe(number, 10);
+            if (isFizz && isBuzz && isDeluxe)
+            { return "fizz buzz deluxe"; }
 
             if (isFizz && isBuzz)
             { return "fizz buzz"; }
 
-            if(isFizz)
+            if (isFizz)
             { return "fizz"; }
 
             if(isBuzz)
             { return "buzz"; }
+
+            if(isDeluxe)
+            { return "deluxe"; }
 
             return number.ToString();
         }
@@ -25,5 +31,14 @@ namespace BeFaster.App.Solutions.FIZ
         {
             return (number % check == 0 || number.ToString().Contains(check.ToString()));
         }
+
+        private static bool CheckDeluxe(int number,int greaterthan)
+        {
+            int digits = number.ToString().Length;
+            char firstdigit = number.ToString()[0];
+            var samenums = number.ToString().Split(firstdigit).Length;
+            return (number > greaterthan && samenums==digits);
+        }
     }
 }
+
