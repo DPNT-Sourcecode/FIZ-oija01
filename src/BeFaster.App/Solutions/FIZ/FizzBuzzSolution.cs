@@ -12,17 +12,22 @@ namespace BeFaster.App.Solutions.FIZ
             if (isFizz && isBuzz && isDeluxe)
             { return "fizz buzz deluxe"; }
 
-            if (isDeluxe)
-            { return "deluxe"; }
-
             if (isFizz && isBuzz)
             { return "fizz buzz"; }
+
+            if (isFizz && isDeluxe)
+            { return "fizz deluxe"; }
 
             if (isFizz)
             { return "fizz"; }
 
-            if(isBuzz)
+            if (isBuzz & isDeluxe)
+            { return "buzz deluxe"; }
+            if (isBuzz)
             { return "buzz"; }
+
+            if (isDeluxe)
+            { return "deluxe"; }
 
 
 
@@ -43,6 +48,7 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
 
 

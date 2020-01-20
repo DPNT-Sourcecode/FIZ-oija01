@@ -18,9 +18,10 @@ namespace BeFaster.App.Tests.Solutions.FIZ
         [TestCase(1501,ExpectedResult ="buzz")]
         [TestCase(1301,ExpectedResult = "fizz")]
         [TestCase(1531,ExpectedResult ="fizz buzz")]
+        [TestCase(333, ExpectedResult = "fizz deluxe")]
         [TestCase(1111,ExpectedResult ="deluxe")]
         [TestCase(555, ExpectedResult = "fizz buzz deluxe")]
-        [TestCase(5555, ExpectedResult = "deluxe")]
+        [TestCase(5555, ExpectedResult = "buzz deluxe")]
 
         public string TestFizz (int x)
         {
@@ -29,6 +30,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
 
     }
 }
+
 
 
 
