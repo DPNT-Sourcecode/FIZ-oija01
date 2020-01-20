@@ -24,10 +24,11 @@ namespace BeFaster.App.Tests.Solutions.SUM
         [TestCase (50,101)]
         public void Sum_GivenValueOutofRange_ThrowException(int x, int y)
         {
-            NUnit.Framework.Assert.That(SumSolution.Sum(x, y), Throws.TypeOf<ArgumentOutOfRangeException>());
+            NUnit.Framework.Assert.Throws<ArgumentOutOfRangeException>(() => SumSolution.Sum(x, y));
         }
 
     }
 }
+
 
 
