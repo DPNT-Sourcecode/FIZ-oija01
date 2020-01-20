@@ -9,6 +9,8 @@ namespace BeFaster.App.Solutions.FIZ
             bool isFizz = CheckFizzBuzzNumber(number,3);
             bool isBuzz = CheckFizzBuzzNumber(number, 5);
             bool isDeluxe = CheckDeluxe(number, 10);
+            bool isOdd = number % 2 == 0;
+
             if (isFizz && isBuzz && isDeluxe)
             { return "fizz buzz deluxe"; }
 
@@ -48,3 +50,4 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
