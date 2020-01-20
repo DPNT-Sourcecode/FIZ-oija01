@@ -9,7 +9,11 @@ namespace BeFaster.App.Solutions.SUM
         {
             if(!TestRange(x,0,100))
             {
-                throw new ArgumentOutOfRangeException; 
+                throw new ArgumentOutOfRangeException(); 
+            }
+            if (!TestRange(y, 0, 100))
+            {
+                throw new ArgumentOutOfRangeException();
             }
             return x + y;
         }
@@ -20,5 +24,3 @@ namespace BeFaster.App.Solutions.SUM
         }
     }
 }
-
-
