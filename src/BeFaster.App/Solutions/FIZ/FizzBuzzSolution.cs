@@ -23,34 +23,11 @@ namespace BeFaster.App.Solutions.FIZ
             if(isDeluxe && isOdd)
             { retval.Append("fake deluxe "); }
 
-            if(isDeluxe)
+            if(isDeluxe && !isOdd)
             { retval.Append("deluxe "); }
 
             if (retval.Length==0)
             { retval.Append(number.ToString()); }
-
-
-            /*
-            if (isFizz && isBuzz && isDeluxe)
-            { return "fizz buzz deluxe"; }
-
-            if (isFizz && isBuzz)
-            { return "fizz buzz"; }
-
-            if (isFizz && isDeluxe)
-            { return "fizz deluxe"; }
-
-            if (isFizz)
-            { return "fizz"; }
-
-            if (isBuzz & isDeluxe)
-            { return "buzz deluxe"; }
-            if (isBuzz)
-            { return "buzz"; }
-
-            if (isDeluxe)
-            { return "deluxe"; }
-            */
 
 
             return retval.ToString().TrimEnd();
@@ -70,5 +47,6 @@ namespace BeFaster.App.Solutions.FIZ
         }
     }
 }
+
 
 
