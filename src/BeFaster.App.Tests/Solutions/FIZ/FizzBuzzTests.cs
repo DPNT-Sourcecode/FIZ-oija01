@@ -24,6 +24,20 @@ namespace BeFaster.App.Tests.Solutions.FIZ
             return FizzBuzzSolution.FizzBuzz(x);
         }
 
+
+        [TestCase(1111, ExpectedResult = "deluxe")]
+        [TestCase(5555, ExpectedResult = "deluxe")]
+        public string TestDeluxe(int x)
+        {
+            return FizzBuzzSolution.FizzBuzz(x);
+        }
+
+
+
+
+
+
+
         [TestCase]
         public void WriteAllFizzBuzzDeluxeNumber()
         {
@@ -41,5 +55,6 @@ namespace BeFaster.App.Tests.Solutions.FIZ
 
     }
 }
+
 
 
