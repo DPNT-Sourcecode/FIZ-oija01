@@ -8,6 +8,7 @@ namespace BeFaster.App.Tests.Solutions.SUM
     [TestFixture]
     public class SumSolutionTest
     {
+        //Test Valid Sums
         [TestCase(1, 1, ExpectedResult = 2)]
         [TestCase(100, 100, ExpectedResult = 200)]
         [TestCase(0, 0, ExpectedResult = 0)]
@@ -16,34 +17,17 @@ namespace BeFaster.App.Tests.Solutions.SUM
             return SumSolution.Sum(x, y);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public int Sum_GivenFirstValueBelowRange_ThrowException()
+        //Test Out of Range values
+        [TestCase (-1,50)]
+        [TestCase (101,50)]
+        [TestCase (50,-1)]
+        [TestCase (50,101)]
+        public void Sum_GivenValueOutofRange_ThrowException(int x, int y)
         {
-            return SumSolution.Sum(-1, 50);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public int Sum_GivenFirstValueAboveRange_ThrowException()
-        {
-            return SumSolution.Sum(101, 50);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public int Sum_GivenSecondValueBelowRange_ThrowException()
-        {
-            return SumSolution.Sum(50, -1);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public int Sum_GivenSecondValueAboveRange_ThrowException()
-        {
-            return SumSolution.Sum(50, 101);
+            NUnit.Framework.Assert.That(SumSolution.Sum(x, y), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
     }
 }
+
 
