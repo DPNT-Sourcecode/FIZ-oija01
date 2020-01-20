@@ -36,9 +36,10 @@ namespace BeFaster.App.Solutions.FIZ
         {
             int digits = number.ToString().Length;
             char firstdigit = number.ToString()[0];
-            var samenums = number.ToString().Split(firstdigit).Length;
+            var samenums = number.ToString().Split(firstdigit).Length - 1 ;
             return (number > greaterthan && samenums==digits);
         }
     }
 }
+
 
